@@ -22,12 +22,25 @@
     </form>
   </div> -->
   <header>
-    <span onclick="onNavClick('/')">Home</span>
-    <span onclick="onNavClick('/registro')"">Registro</span>
+    <nav class="navbar navbar-dark bg-primary">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" onclick="onNavClick('/')">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="onNavClick('/registro')">Registro</a>
+          </li>
+        </ul>
+    </nav>
   </header>
   <div class="contenido">
   
   </div>
+  <footer>
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+  </footer>
   <script src="./scripts.js"></script>
 </body>
 </html>
