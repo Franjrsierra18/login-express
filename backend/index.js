@@ -1,5 +1,10 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost:27017/Loginproject', {useNewUrlParser:true})
+.then(()=>console.log('conexion con mongoDB creada con exito'))
+.catch(err => console.log('error al conectar con mongoDB'+ err));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
