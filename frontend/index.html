@@ -8,8 +8,8 @@
   <title>Login express</title>
 </head>
 <body>
-  <div class="container">
-    <form onsubmit="registro(eve)">
+  <!-- <div class="container">
+    <form onsubmit="registro(event)">
       <div class="form-group">
         <label for="InputEmail1">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="usuario">
@@ -20,6 +20,13 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+  </div> -->
+  <header>
+    <span onclick="onNavClick('/')">Home</span>
+    <span onclick="onNavClick('/registro')"">Registro</span>
+  </header>
+  <div class="contenido">
+  
   </div>
   <script src="./scripts.js"></script>
 </body>
