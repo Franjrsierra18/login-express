@@ -1,6 +1,7 @@
 const router=require('express').Router();
 const UserModel = require( '../models/User' );
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 router.get( '/', ( req, res ) => { //READ
     UserModel.find( {} ).then( users => res.send( users ) ).catch( console.log )
@@ -25,7 +26,8 @@ router.post('/login', async(req,res)=>{
         if (!isMatch) {
             return res.status(400).send('usuario o contraseña incorrectos')
         }
-        res.json({msg:"bienvenido de vuelta", user})
+        await jwt.sign({_id:user._id},'cualquiervaina',{expiresIn:'7d'})
+        res.json({user,token});
         // res.send(user)
     } catch (error) {
         console.log(error);

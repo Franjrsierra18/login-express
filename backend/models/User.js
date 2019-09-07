@@ -18,8 +18,16 @@ const userSchema=new mongoose.Schema({
         type:String,
         required:true,
         minlength:8
-    }
+    },
+    token:[String]
 });
+
+userSchema.methods.toJSON=function () {
+    const user = this.toObject();
+    delete user.password;
+    delete user.__v;
+    return user;
+}
 
 userSchema.pre('save', function (next) {
     const user = this;
